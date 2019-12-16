@@ -18,5 +18,11 @@
 
 ​	注：最少要有两个值 size family
 
+​	weight style size family  √
+
+​	style weight size family  √
+
+4.尽量不要混写，如果非要混写的话那么要先写复合样式，再写单一样式。
+
 ​			
 
