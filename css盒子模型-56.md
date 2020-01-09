@@ -88,4 +88,22 @@
 
 ​		2.想办法只给一个元素添加边距
 
-​		
+​	2.margin传递问题，**出现在嵌套的结构**中，只是针对margin-top的问题。
+
+​		1.BFC规范
+
+​		2.给父容器加边框
+
+​		3.将margin换成padding
+
+<img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20200109154811526.png" alt="image-20200109154811526" style="zoom:200%;" />
+
+
+
+扩展：
+
+​	1.margin左右自适应是可以的，上下不行
+
+​	用margin-right: auto; margin-left: auto;就可以做到
+
+​	2.width、height不设置的时候，对盒子模型的影响：会自动去计算容器的大小，节省代码
