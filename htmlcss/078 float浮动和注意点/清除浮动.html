@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* #box1{width: 100px; height: 100px;
+         background: rgb(236, 131, 131);float: right;
+         }
+        #box2{width: 200px; height: 200px; 
+        background: rgb(172, 172, 236);clear: both;
+        } */
+        #box1{width: 200px; border: 2px black solid;}
+        #box2{width: 100px;height: 200px; background: royalblue;float: left;}
+        .clear:after{content: ''; clear: both;display: block;} 
+    </style>
+</head>
+<body>
+    <!-- <div id="box1"></div>
+    <div id="box2"></div> -->
+    <div id="box1" class="clear">
+        <div id="box2"></div>
+    </div>
+</body>
+</html>
