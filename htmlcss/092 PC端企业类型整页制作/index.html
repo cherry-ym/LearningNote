@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    #banner{position: relative;}
+    #banner .banner-list{width: 100%; height: 469px; position: relative;}
+    #banner .banner-list li{width: 100%; height: 100%; 
+        background: center 0 no-repeat; 
+        position: absolute; left: 0; top: 0; opacity: 0; z-index: 1;}
+    #banner .banner-list a{display: block; width: 100%; height: 100%;}
+    #banner .banner-list li.active{opacity: 1; z-index: 10;}
+    #banner .banner-btn{width: 100%; position: absolute; bottom: 19px;
+        z-index: 20; font-size: 0; text-align: center; }
+    #banner .banner-btn li{display: inline-block; 
+        width: 12px; height: 12px; border: 2px white solid; border-radius: 50%;
+        box-sizing: border-box; 
+        margin:0 6px ; cursor: pointer;}
+    #banner .banner-btn li.active{background: white;}
+    </style>
+</head>
+<body>
+    <div id="head" class="container">
+        <div class="l head_logo">
+            <a href="#">
+                <img src="logo.png" alt="" title="博文尚美">
+            </a>
+        </div>
+        <ul class="r head_menu">
+            <li>
+                <a href="#">HOME</a>
+            </li>
+            <li>
+                <a href="#">ABOUT</a>
+            </li>
+            <li>
+                <a href="#">PROTFOLIO</a>
+            </li>
+            <li>
+                <a href="#">SERVICE</a>
+            </li>
+            <li>
+                <a href="#">NEWS</a>
+            </li>
+            <li>
+                <a href="#">CONTACT</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="banner" class="container-fluid">
+        <ul class="banner-list">
+            <li class="active" style="background-image: url(banner.png);">
+                <a href=""></a>
+            </li>
+            <li style="background-image: url(banner.png);">
+                <a href=""></a>
+            </li>
+            <li style="background-image: url(banner.png);">
+                <a href=""></a>
+            </li>
+            <li style="background-image: url(banner.png);">
+                <a href=""></a>
+            </li>
+        </ul>
+        <ol class="banner-btn">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</body>
+</html>
