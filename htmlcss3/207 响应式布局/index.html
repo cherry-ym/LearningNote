@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{width: 100px;height: 100px;background: brown;}
+
+    /*响应式语法*/
+    /* @media all and (min-width: 600px) and (max-width: 900px){
+        #box{background: cadetblue;}
+    }
+
+    @media all and (min-width: 600px){
+        #box{background: cadetblue;}
+    } */
+
+    @media all and (orientation: portrait){
+        #box{background: cadetblue;}
+    }
+
+    @media all and (orientation: landscape){
+        #box{background: rgb(228, 243, 96);}
+    }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
