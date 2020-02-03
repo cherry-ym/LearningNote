@@ -1,0 +1,121 @@
+.box{width: 200px;}
+
+//单行注释，不会被编译出来
+
+/*
+    多行注释，即CSS注释方式，会被编译出来
+*/
+
+$number:123px;
+$key: margin;
+
+.box2{
+    width: $number;
+    height: $number;
+    #{$key}: auto;
+}
+
+$number:123px;
+.box3{
+    height: $number;
+    $number:456px;
+    width: $number;
+}
+
+ul{
+    list-style: none;
+    li{
+        float: left;
+        div{margin: 10px;}
+        p{margin: 20px;}
+    }
+    &:hover{
+        color: brown;
+        //属性嵌套
+        font : {
+            size: 10px;
+            weight: bold;
+        }
+    }
+}
+
+$num: 100px;
+.box4{
+    width: $num * 3;
+    height: $num + 20;
+    font: 20px / 1.5;
+    padding: (20px / 1.5);
+}
+
+@function sum($n,$m){
+    @return $n + $m;
+}
+
+.box5{
+    width: round(3.4px);
+    height: percentage(0.2);
+    margin: random($limit: 100);
+    padding: sqrt(25%);
+    font-size: sum(4px,5px);
+}
+
+@mixin show {
+    display: block;
+}
+@mixin hide($color) {
+    display: none;
+    color: $color;
+}
+
+.box6{
+    width: 100px;
+    @include show;
+    @include hide(brown)
+}
+
+%line{
+    display: inline;
+}
+
+.box7{
+    @extend %line;
+}
+.box8{
+    @extend %line;
+}
+
+$background:(
+    a:url(a.png),
+    b:url(b.png)
+);
+$transform:(
+    a:scale(2),
+    b:rotate(30deg)
+);
+
+.box9{
+    background: map-values($background);
+    transform: zip(map-values($transform)...);
+}
+
+$count :5;
+.box11{
+    @if ($count > 4) {
+        width: 100px + $count;
+    }
+    @else{
+        width: 10px + $count;
+    }
+}
+
+@for $i from 0 through 2{
+    .box-#{$i}{
+        width: 100px + $i;
+    }
+}
+
+
+
+
+
+
