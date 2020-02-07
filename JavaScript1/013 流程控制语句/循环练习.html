@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script>
+        //山上有一口缸可以装50升水，现在有15升水。老和尚叫小和尚下山挑水，每次可以挑5升。
+        //问：小和尚要挑几次水才可以把水缸挑满？
+        var water = 15;
+        var count = 0;
+        while(water < 50){
+            water += 5;
+            count++;
+        }
+        document.write("一共挑了"+ count +"次水");
+    </script> -->
+
+    <!-- <script>
+        /*
+        判断一个数是不是合数。(指自然数中除了能被1和本身整除外，还能被其他的数整除（不包括0)的数。)
+        判断一个数是不是质数。(除了1和它本身以外不再有其他的除数整除。)
+        */
+
+        var num = 7;
+        var isyes = false;    //是质数
+        for(i = 2; i < num; i++){
+            if(num % i == 0){
+                isyes = true;
+                break;
+            }
+        }
+        if(isyes){
+            document.write("这是一个合数");
+        }else{
+            document.write("这是一个质数");
+        }
+    </script> -->
+
+    <script>
+        /*
+        国王奖励发明国际象棋的大师，大师说：我要麦子，国际一共有64格，
+        第一个放一粒麦子，后面的格放前面格的双倍，当棋盘被放满的时候就可以了。
+        */
+
+        var num = 1;       //每一格的麦子数
+        var sum = 0;
+        for(i = 1; i <= 64; i++){
+            sum += num;
+            num *= 2;
+        }
+        document.write(sum);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

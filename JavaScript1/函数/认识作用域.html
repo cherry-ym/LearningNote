@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*var a = 2;    全局变量
+        function show(){
+            a++;
+            alert(a);
+        }
+
+        show();
+        show();
+        alert(a);*/
+
+        /*
+        function show(){
+            var a = 2;          //局部变量
+            a++;
+            alert(a);
+        }
+
+        show();
+        show();
+        alert(a);
+        */
+
+        var a = 10, b = 20;
+        function show(a){
+            var b = 100;
+            a += 5;
+            alert(a + "," + b);
+        }
+
+        show(a) //15,100
+        alert(a + "," + b);  //10,20
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

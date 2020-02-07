@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+        //打印三角形
+        for(var i = 1; i <= 5; i++){
+            //圆圈个数
+            for(j = 1; j <= i; j++){
+                document.write("⭕");
+            }
+            document.write("<br/>");
+        }*/
+
+
+        //输出空格 = 5 - 当前行的圆圈数 = 5 - i
+        for(var i = 1; i <= 5; i++){
+            for(k = 1; k <= 5-i; k++){
+                // document.write("&ensp;&ensp;&nbsp;");
+                document.write("😊");
+            }
+
+            //圆圈个数
+            for(j = 1; j <= i; j++){
+                document.write("⭕");
+            }
+            document.write("<br/>");
+        }
+
+    </script>
+
+    <!-- <script>
+        //打印九九乘法表
+        //i是行，j是列
+        for(i = 1; i <= 9; i++){
+            for(j = 1; j <= i; j++){
+                document.write(j + "X" + i + "=" +(i * j) + "&nbsp;");
+            }
+            document.write("<br/>");
+        }
+    </script> -->
+
+
+</head>
+<body>
+    
+</body>
+</html>
