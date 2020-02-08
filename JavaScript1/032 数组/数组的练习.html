@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*1.定义一个含有30个整型元素的数组，按顺序分别赋予从2开始的偶数；
+        然后按顺序每五个数求出一个平均值，放在另一个数组中并输出。试编程。*/
+
+        var arr = Array(30);
+        for(i = 0; i < arr.length; i++){
+            arr[i] = i * 2 + 2;
+        }
+        //  document.write(arr);
+
+        //求平均数
+        var averageArr = [];
+        for(j = 0; j < 6; j++){
+            var newArr = arr.splice(0, 5);
+            var sum = 0;
+            for(k = 0; k < newArr.length; k++){
+                sum += newArr[k];
+            }
+            
+            // document.write(sum + "<br/>");
+            averageArr.push(sum / 5);
+            
+        }
+        document.write(averageArr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

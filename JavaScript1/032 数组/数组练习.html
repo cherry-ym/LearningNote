@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        //以下通过循环给数组每个元素赋值，随机数
+
+        var arr = Array(10);
+        for(i = 0; i < arr.length; i++){
+            arr[i] = parseInt(Math.random() * 10);
+        }
+        document.write(arr + "<br/>");
+    </script> -->
+
+    <script>
+        //数组遍历      for循环/for...in遍历  快速遍历（枚举）
+        var arr = [10, 20, 30, 40, 50];
+        for(i = 0; i < arr.length; i++){
+            document.write(arr[i] + "<br/>");
+        }
+
+        for(var i in arr){
+            document.write(arr[i] + "<br/>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

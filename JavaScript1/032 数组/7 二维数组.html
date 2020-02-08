@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        var arr1 = [10, 20, 30];
+        //将arr1的地址给了arr
+        var arr = [true, 100, "hello", arr1];
+        //document.write(arr.length);
+
+        document.write(arr[3][1]);
+    </script> -->
+
+    <script>
+        /*通过循环按行顺序为一个5×5的二维数组a赋1到25的自然数，然后输出该数组的左下半三角。试编程。*/
+        var arr = [
+            [1, 2, 3, 4, 5],
+            [6, 7, 8, 9, 10],
+            [11, 12, 13, 14, 15],
+            [16, 17, 18, 19, 20],
+            [21, 22, 23, 24, 25]
+        ] ;
+
+
+        /*for(i = 0; i < arr.length; i++){
+            for(j = 0; j <= i; j++){
+                document.write(arr[i][j] + "&nbsp;");
+            }
+            document.write("<br/>");
+        }*/
+
+        for(i = 0; i < arr.length; i++){
+            //document.write(arr[i]);
+            var newArr = arr[i];
+            for(j = 0; j < newArr.length; j++){
+                if(i >= j){
+                    document.write(newArr[j] + "&nbsp;")
+                }
+            }
+            document.write("<br/>");
+        }
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
