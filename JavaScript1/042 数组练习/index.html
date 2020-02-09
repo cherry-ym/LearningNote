@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        //1.随机给出一个五位以内的数，然后输出该数共有多少位，每位分别是什么
+        function countOfNum(num){
+            //1.声明一个数组存放取出的各个位上的数
+            var arr = [];
+            while(num){
+                arr.unshift(num % 10);
+                num = parseInt(num / 10);
+            }
+            var Newarr = arr.join(" ");
+            document.write("一共是" + arr.length + " 位," + "每一位分别是" + Newarr);
+        }
+
+        countOfNum(521);
+    </script> -->
+
+    <!-- <script>
+        //2.编写函数has(arr , 60) 判断数组中是否存在60这个元素，返回布尔类型
+        function has(arr, item){
+            for(i= 0; i < arr.length; i++){
+                if(arr[i] === item){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        document.write(has([25, 30, 55, 6, 60], 60));
+    </script> -->
+
+    <script>
+        /*
+        生成13位条形码(对之前的知识综合练习)
+        Ean-13 码规则：第十三位数字是前十二位数字经过计算得到的校验码。
+        例如：690123456789
+        第十三位计算其校验码的过程为：
+        @前十二位的奇数位和6+0+2+4+6+8=26
+        @前十二位的偶数位和9+1+3+5+7+9=34
+        @将奇数和与偶数和的三倍相加26+34*3=128
+        @取结果的个位数：128的个位数为8
+        @用10减去这个个位数10-8=2
+        所以校验码为2（注：如果取结果的个位数为0，那么校验码不是（10-0=10），而是0）实现方法ean13（）计算验证码，输入12位条码，返回带验证码的条码。
+        例如：输入：692223361219输出：6922233612192
+        */
+
+        document.write(ean13(692589161219));
+        function ean13(num){
+            //1.将每一位取出
+            var arr = [];
+            while(num){
+                arr.unshift(num % 10);
+                num = parseInt(num / 10);
+            }
+
+            var odd = 0;        //奇数位
+            var even = 0;       //偶数位
+            for(i = 0; i < arr.length; i++){
+                if(i % 2 == 0){
+                    //奇数位
+                    odd += arr[i];
+                }else{
+                    //偶数位
+                    even += arr[i];
+                }
+            }
+
+            var sum = (odd + even * 3) % 10;
+            if(sum){
+                sum = 10 - sum;
+            }
+
+            arr.push(sum);
+            return Number(arr.join(""));
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
