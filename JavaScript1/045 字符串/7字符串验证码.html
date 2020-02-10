@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        function numTestCode(n){
+            var arr = [];
+            for(var i = 0; i < n; i++){
+                var num = parseInt(Math.random() * 10);
+                arr.push(num);
+            }
+            return arr.join("");
+        }*/
+
+        // document.write(numTestCode(6));
+
+        function testCode(n){
+            var arr = [];
+            for(var i = 0; i < n; i++){
+                var num = parseInt(Math.random() * 123);
+                if(num >= 0 && num <= 9){
+                    arr.push(num);
+                }else if(num >= 97 && num <= 122 || num >= 65 && num <= 90){
+                    arr.push(String.fromCharCode(num));
+                }else{
+                    i--;
+                }
+            }
+            return arr.join("");
+        }
+
+        document.write(testCode(9));
+
+
+
+
+        function testCode(n){
+            var arr = [];
+            for(var i = 0; i < n; i++){
+                var num = parseInt(Math.random() * 123);
+                if(num >= 0 && num <= 9){
+                    arr.push(num);
+                }else if(num >= 65 && num <= 90 || num >= 97 && num <= 122){
+                    arr.push(String.fromCharCode(num));
+                }else{
+                    i--;
+                }
+            }
+            return arr.join("");
+        }
+        document.write(testCode(9));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj1 = new Object();
+        var obj2 = Object();
+        var obj3 = {};
+
+        //新增属性,使用起来和普通变量没有任何区别
+        obj3.username = "钢铁侠";
+        obj3.age = 18;
+
+        //访问属性
+        document.write(obj3.username);
+        document.write(obj3.age);
+
+        //新增方法   使用起来和普通函数没有任何区别
+        obj3.show = function(){
+            document.write("我的名字叫" + obj3.username + "今年" + obj3.age + "岁");
+        }
+        obj3.show();
+
+        //通过对象常量赋值
+        var obj3 = {
+            username:"钢铁侠",
+            age: "18",
+            show:function(){
+                document.write("我的名字叫" + obj3.username + "今年" + obj3.age + "岁");
+            }
+        };
+
+        //delete 关键字 删除对象的属性或方法
+        delete obj3.username;
+
+
+        //面向对象
+        var car = {
+            speed: 60,
+            run: function(road){
+                return road.length / car.speed;
+            }
+        };
+
+        var kuahaidaqiao = {
+            length = 1000,
+        };
+
+        var hours = car.run(kuahaidaqiao);
+        document.write("一共花了" + hours.toFixed(2) + "小时");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

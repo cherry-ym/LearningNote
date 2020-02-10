@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{width: 200px; height: 200px; background: cadetblue; border: 1px black solid;
+            text-align: center; margin: 100px auto; padding: 50px;
+        }
+        #div1 input{width: 200px; height: 30px; font-size: 18px; margin-top: 10px;}
+        #div1 span{font-size: 14px; color: brown;}
+    </style>
+    <script src="../tool.js"></script>
+    <script>
+        /*事件驱动函数*/
+        function func(){
+            var oUsername = document.getElementById("username");
+            var oUsernameSpan = document.getElementById("username_span");
+            //1.拿到输入框中的内容
+            var oValue = oUsername.value;
+            //2.判断
+            //<1>用户名长度是否符合要求
+            if(oValue.length < 6 || oValue.length > 18){
+                oUsernameSpan.innerHTML = "！长度应该是6~18个字符";
+                //<2>判断首字符是否是字母
+            }else if(!isABC(oValue[0])){
+                oUsernameSpan.innerHTML = "！首字母必须以英文开头";
+                
+            }else{
+                //<3>是否都是数字字母下划线组成
+                var isYes = true;
+                for(var i = 0; i < oValue.length; i++){
+                    if(!isDEF(oValue[i])){
+                        isYes = false;
+                        break;
+                    }
+                }
+                if(isYes){
+                    oUsernameSpan.innerHTML = "√ 恭喜，该邮件可注册";
+                }else{
+                    oUsernameSpan.innerHTML = "!必须由数字、字母、下划线组成";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="text" id="username" placeholder="用户名" onblur="func();">
+        <span id="username_span">6~18个字符，可使用数字、字母、下划线，须以字母开头</span>
+        <input type="text" placeholder="密码">
+    </div>
+</body>
+</html>
