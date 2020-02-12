@@ -114,3 +114,8 @@ function doubleNum(n){
         return n;
     }
 }
+
+//跨浏览器兼容
+function getStyle(node, cssStyle){
+    return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            //alert(oDiv.innerHTML);
+            
+            //赋值
+            //oDiv.innerHTML = "<h1>hello world</h1>";
+
+            //innerText()
+            //alert(oDiv.innerText);
+            //oDiv.innerText = "<h1>hello world</h1>"
+
+            //outerHTML
+            alert(oDiv.outerHTML);
+            oDiv.outerHTML = "<h1>hello world</h1>";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">div文本<em>em文本</em><strong>strong文本</strong></div>
+</body>
+</html>

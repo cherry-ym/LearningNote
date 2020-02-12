@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function elementsByClassName(node, classStr){
+            //1、获取node这个节点下所有的子节点
+            var nodes = node.getElementsByTagName('*');
+            var arr = [];   //存放符合条件的节点
+            for(var i = 0; i <nodes.length; i++){
+                if(nodes[i].className === classStr){
+                    arr.push(nodes[i]);
+                }
+            }
+            return arr;
+        }
+
+        window.onload = function(){
+            var oL = document.getElementById('ol1');
+            var nodes = elementsByClassName(oL, box);
+            alert(nodes.length);
+            for(var i = 0; i < nodes.length; i++){
+                nodes[i].style.background = 'brown';
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li></li>
+        <li class="box">111</li>
+        <li></li>
+        <li class="box">111</li>
+        <li></li>
+        <li name="hello">111</li>
+        <div class="box" name="hello">111</div>
+    </ul>
+    <input type="text" name="hello">
+    <span name="hello">span</span>
+    <ol id="ol1">
+        <li></li>
+        <li class="box">222</li>
+        <li class="box">222</li>
+        <li></li>
+    </ol>
+</body>
+</html>

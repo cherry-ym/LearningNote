@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            
+            /*alert(oDiv.id);
+            alert(oDiv.title);*/
+            
+
+            /*alert(oDiv.getAttribute("id"));
+            alert(oDiv.getAttribute("title"));*/
+
+            //区别：1.class的访问
+            alert(oDiv.className);
+            alert(oDiv.getAttribute("class"));
+
+            oDiv.className = 'box4';
+
+            //删除class
+            oDiv.className = '';
+            oDiv.removeAttribute("title");
+
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box">div</div>
+</body>
+</html>

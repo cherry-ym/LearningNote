@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        document.write(location.protocol + "<br/>");
+        document.write(location.hostname);
+    </script> -->
+
+    <script>
+        document.write(window.location === window.document.location);
+
+    </script>
+</head>
+<body>
+    <button onclick="location.assign('https://www.baidu.com')">assign</button>
+    <button onclick="location.replace('https://www.baidu.com')">replace</button>
+    <button onclick="location.reload('true')">reload</button>
+</body>
+</html>
