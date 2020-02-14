@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            /*
+            alert(oDiv.childNodes.length);
+            alert(oDiv.childNodes[0].nodeName);
+            alert(oDiv.childNodes[1].nodeValue);
+            alert(oDiv.childNodes[2].nodeValue);
+            */
+            /*
+            alert(oDiv.firstChild.nodeName);
+            alert(oDiv.lastChild.nodeName);
+            */
+
+            /*
+            alert(oDiv.childNodes.length);
+            for(var i = 0; i < oDiv.childNodes.length; i++){
+                document.write(oDiv.childNodes[i].nodeType + "<br/>");
+            }
+            */
+
+
+            //将纯空白文本剔除
+            //alert(oDiv.children.length);
+
+            //alert(oDiv.firstElementChild.nextSibling.nodeValue);
+
+            alert(oDiv.firstElementChild.nextElementSibling.nodeName);
+        }
+    </script>
+</head>
+<body>
+    <!-- <div id="div1"><em>em文本</em>>div文本<strong>strong文本</strong></div> -->
+    
+    <div id="div1">
+        <em>em文本</em>
+        div文本
+        <strong>strong文本</strong>
+    </div>
+</body>
+</html>

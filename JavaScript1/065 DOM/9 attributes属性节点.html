@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            //alert(oDiv.attributes);  集合
+
+            //获取其中一个属性节点
+            alert(oDiv.attributes.getNamedItem("title"));
+            alert(oDiv.attributes.getNamedItem("title").nodeType);
+            alert(oDiv.attributes.getNamedItem("title").nodeName);
+            alert(oDiv.attributes.getNamedItem("title").nodeValue);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box">div文本</div>
+</body>
+</html>

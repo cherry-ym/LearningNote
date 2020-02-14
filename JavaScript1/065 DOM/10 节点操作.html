@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById("btn1");
+            var oDiv = document.getElementById("div1");
+            oBtn.onclick = function(){
+                //document.write("<h1>hello world</h1>");
+                var oP = document.createElement("p");
+                var oTxt = document.createTextNode("<h1>hello world</h1>");
+                oP.appendChild(oTxt);
+                //oDiv.appendChild(oP);
+
+                //将oP插入到oDiv节点的前面
+                //document.body.insertBefore(oP, oDiv);
+
+                //document.body.replaceChild(oP, oDiv);
+
+                // var newNode = oDiv.cloneNode(true);
+                // document.body.appendChild(newNode);
+
+                document.body.removeChild(oDiv);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <em>em</em>
+        div文本
+        <strong>strong</strong>
+    </div>
+    <button id="btn1">节点操作</button>
+</body>
+</html>
