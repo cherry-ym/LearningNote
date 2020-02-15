@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 200px; height: 200px; background: cadetblue; line-height: 100px; text-align: center; margin: 20px;}
+        div span{width: 100px; height: 100px; background: white; display: inline-block;margin-top: 50px;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oDivs = document.getElementsByTagName("div");
+
+            var i = 0;
+            oDivs[0].onmouseout = function(){
+                var oSpan = this.getElementsByTagName("span")[0];
+                oSpan.innerHTML = i++;
+            }
+
+            var j = 0;
+            oDivs[1].onmouseleave = function(){
+                var oSpan = this.getElementsByTagName("span")[0];
+                oSpan.innerHTML = j++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <span>mouseover</span>
+    </div>
+    <div>
+        <span>mouseenter</span>
+    </div>
+</body>
+</html>

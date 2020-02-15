@@ -4,7 +4,7 @@
 
 ​	给flash和一些插件进行渲染操作的标签。
 
-​	obje需要配合param使用
+​	object需要配合param使用
 
 ![image-20200121160658940](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20200121160658940.png)
 

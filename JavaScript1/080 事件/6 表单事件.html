@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oInput1 = document.getElementById("input1");
+            /*
+            oInput1.onblur = function(){
+                this.value = "失去焦点";
+            }
+
+            oInput1.onfocus = function(){
+                this.value = "获取焦点";
+            }*/
+
+            /*
+            oInput1.onselect = function(){
+                alert("被选中了");
+            } */
+            /*
+            oInput1.onchange = function(){
+                alert("被修改了");
+            }*/
+
+            var oF1 = document.getElementById("f1");
+            oF1.onsubmit = function(){
+                alert("输出提交");
+            }
+            oF1.onreset = function(){
+                alert("重置");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- <input type="text" value="默认文本" id="input1"> -->
+    <form id="f1">
+        <input type="text">
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+</html>

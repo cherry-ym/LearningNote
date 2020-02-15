@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{width: 200px; height: 200px; background: brown;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById("btn1");
+            var oDiv = document.getElementById("div1");
+            /*
+            oBtn.ondblclick = function(){
+                alert("双击");
+            }*/
+
+            /*//鼠标移入和移出
+            oBtn.onmouseover = function(){
+                this.style.background = "orange";
+            }
+
+            oBtn.onmouseout = function(){
+                this.style.background = "yellow";
+            }
+            */
+
+            oBtn.onmousedown = function(){
+                this.innerHTML = "按下";
+            }
+            oBtn.onmouseup = function(){
+                this.innerHTML = "抬起";
+            }
+
+
+            var i =0;
+            oDiv.onmousemove = function(){
+                this.innerHTML = i++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+    <div id="div1"></div>
+</body>
+</html>

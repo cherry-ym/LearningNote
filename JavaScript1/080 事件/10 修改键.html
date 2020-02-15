@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.onclick = function(ev){
+                var arr = [];
+                var e = ev || window.event;
+                if(e.shiftKey){
+                    arr.push("shift");
+                }
+
+                if(e.altKey){
+                    arr.push("alt");
+                }
+
+                if(e.ctrlKey){
+                    arr.push("ctrl");
+                }
+
+                if(e.metaKey){
+                    arr.push("windows");
+                }
+
+                alert(arr);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
