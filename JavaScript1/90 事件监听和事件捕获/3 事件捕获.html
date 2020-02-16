@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{padding: 50px;}
+        #div1{background: rgb(248, 186, 184);}
+        #div2{background: palegoldenrod;}
+        #div3{background: cadetblue;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oDivs = document.getElementsByTagName("div");
+            for(var i = 0; i < oDivs.length; i++){
+                oDivs[i].addEventListener("click", function(){
+                    alert(this.id);
+                }, true);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+</body>
+</html>

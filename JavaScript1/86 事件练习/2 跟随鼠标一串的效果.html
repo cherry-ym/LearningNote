@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{position: absolute; width: 10px; height: 10px; background: cadetblue; border-radius: 50%;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oDivs = document.getElementsByTagName("div");
+            document.onmousemove = function(ev){
+                var e = ev || window.event;
+                for(var i = oDivs.length - 1; i > 0; i--){
+                    oDivs[i].style.left = oDivs[i - 1].offsetLeft + "px";
+                    oDivs[i].style.top = oDivs[i - 1].offsetTop + "px";
+                }
+
+                //下标为0的div跟随鼠标移动
+                oDivs[0].style.left = e.clientX + "px";
+                oDivs[0].style.top = e.clientY + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

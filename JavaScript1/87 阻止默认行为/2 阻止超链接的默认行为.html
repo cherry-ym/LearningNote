@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oA = document.getElementById("a1");
+            /*
+            oA.onclick = function(){
+                return confirm("确定要离开当前页面吗？");
+            }*/
+
+
+            oA.onclick = function(ev){
+                var e = ev || window.event;
+                preDef(e);
+
+                alert("后续的操作");
+            }
+        }
+
+
+        //跨浏览器的阻止超链接
+        function preDef(e){
+            if(e.preventDefault){
+                e.preventDefault();
+            }else{
+                window.event.returnValue = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="http://www.baidu.com" id="a1">百度</a>
+</body>
+</html>

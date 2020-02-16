@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{padding: 50px;}
+        #div1{background: rgb(247, 167, 167);}
+        #div2{background: rgb(237, 247, 147);}
+        #div3{background: rgb(172, 225, 247);}
+    </style>
+    <script>
+        window.onload = function(){
+            var oDivs = document.getElementsByTagName("div");
+            for(var i = 0; i < oDivs.length; i++){
+                oDivs[i].onclick = function(ev){
+                    var e = ev || window.event;
+                    alert(this.id);
+
+                    //e.cancelBubble = true;
+                    //e.stopPropagation();
+                    stopBubble(e);
+                }
+            }
+
+            //分装跨浏览器兼容的阻止事件冒泡
+            function stopBubble(e){
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+</body>
+</html>

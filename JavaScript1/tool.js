@@ -125,3 +125,41 @@ function randomColor(){
     var str = "rgba("+ parseInt(Math.random() * 256) +","+ parseInt(Math.random() * 256) +","+ parseInt(Math.random() * 256) +",1)";
     return str;
 }
+
+//限制拖拽
+function limitDrag(node){
+    node.onmousedown = function(ev){
+        var e = ev || window.event;
+        var offsetX = e.clientX - node.offsetLeft;
+        var offsetY = e.clientY - node.offsetTop;
+
+        document.onmousemove = function(ev){
+            var e = ev || window.event;
+            var l = e.clientX - offsetX;
+            var t = e.clientY - offsetY;
+            var windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+            //限制出界
+            if(l <= 0){
+                l = 0;
+            }
+            if(l >= windowWidth - node.offsetWidth){
+                l = windowWidth - node.offsetWidth;
+            }
+
+            if(t <= 0){
+                t = 0;
+            }
+            if(t >= windowHeight - node.offsetHeight){
+                t = windowHeight - node.offsetHeight;
+            }
+            node.style.left = l + 'px';
+            node.style.top = t + 'px';
+        }
+    }
+
+    document.onmouseup = function(){
+        document.onmousemove = null;
+    }
+}
