@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            if(!window.localStorage){
+                alert("当前页面不支持localStorage");
+            }else{
+                /*
+                localStorage.setItem("a", "1");
+                localStorage.b = '2';
+                localStorage['c'] = '3';
+                */
+
+                alert(localStorage.getItem("a"));
+                alert(localStorage.b);
+                alert(localStorage['c']);
+            }
+
+            var oBtn = document.getElementById('btn1');
+            oBtn.onclick = function(){
+                localStorage.removeItem("a");
+                localStorage.removeItem("b");
+                localStorage.removeItem("c");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+</body>
+</html>

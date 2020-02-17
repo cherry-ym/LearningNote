@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        function show(x, y){
+            alert(this);                //this指向window
+            alert(x + ',' + y);
+        }
+
+        //show(10, 20);
+
+        //show.call('call', 20, 40);
+
+        show.apply("apply", [20,40]);
+    </script> -->
+    <script>
+        /*
+        function show(x, y){
+            alert(this);
+            alert(x + ',' + y);
+        }
+        //var res = show.bind('bind');
+        //res(40, 50);
+        show.bind('bind')(40, 50);
+        */
+
+        function show(){
+            alert(this);
+        }
+
+        window.onload = function(){
+            var oBtn = document.getElementById('btn');
+            /*
+            oBtn.onclick = function(){
+                show.call('call');
+            }
+            */
+            /*
+            oBtn.onclick = function(){
+                show.apply('apply');
+            }
+            */
+
+            oBtn.onclick = show.bind('blind');
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+</html>

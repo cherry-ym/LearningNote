@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  //.
+        var str = "g,ogle";
+        var box = /g.ogle/;
+        alert(box.test(str));
+        */
+
+        /*//[]
+        var str = "g5ogle";
+        var box = /g[0-9]ogle/;
+        alert(box.test(str));
+        */
+
+        /*
+        //[a-zA-Z0-9_]
+        var str = "g_ogle";
+        var box = /g[a-zA-Z0-9_]ogle/;
+        alert(box.test(str));
+        */
+
+        // \w
+        /*
+        var str = "g.ogle";
+        var box = /g\wogle/;
+        alert(box.test(str));
+        */
+
+        // [^0-9]
+        /*
+        var str = "g5ogle";
+        var box = /g[^0-9]ogle/;
+        alert(box.test(str));       //false
+        */
+
+        //x?
+        /*
+        var str = "goo15le";
+        var box = /goo\d{2,5}le/;
+        alert(box.test(str));
+        */
+
+        // ()+
+        /*
+        var str = "googabccccccle";
+        var box = /goog(abc)+le/;
+        alert(box.test(str));       //false
+        */
+
+        // \s
+        /*
+        var str = "goog le";
+        var box = /goog\sle/;
+        alert(box.test(str));          //true
+        */
+
+        //  ^
+        /*
+        var str = " google lax";
+        var box = /^google/;
+        alert(box.test(str));       //false 因为有空格
+        */
+
+        // |
+        /*
+        var str = "baidu";
+        var box = /google|baidu|bing/;
+
+        alert(box.test(str));   //true
+        */
+
+        // m换行匹配
+        var str = "1.bai25du\n2.google\n3.bing";
+        var box = /^\d/gm;
+        alert(str.replace(box, "*"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

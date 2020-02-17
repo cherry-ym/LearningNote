@@ -15,7 +15,7 @@
             var oBtns = oDiv1.getElementsByTagName("button");
             var oDivs = oDiv1.getElementsByTagName("div");
 
-            //给每一个按钮添加点击
+            /*//给每一个按钮添加点击
             for(var i = 0; i < oBtns.length; i++){
                 oBtns[i].index = i;
                 oBtns[i].onclick = function(){
@@ -27,7 +27,20 @@
                     this.className = "active";
                     oDivs[this.index].style.display = "block";                    
                 }
+            }*/
+
+            for(let i = 0; i < oBtns.length; i++){
+                oBtns[i].onclick = function(){
+                    //取消所有按钮样式
+                    for(var j = 0; j < oBtns.length; j++){
+                        oBtns[j].className = "";
+                        oDivs[j].style.display = "none";
+                    }
+                    this.className = "active";
+                    oDivs[i].style.display = "block";                    
+                }
             }
+
         }
     </script>
 </head>
