@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name, sex){
+            this.name = name;
+            this.sex = sex;           
+        }
+
+        //Person构造函数添加方法，添加在构造函数的原型上prototype
+        Person.prototype.showName = function(){
+            alert('我的名字' + this.name);
+        }
+        Person.prototype.showSex = function(){
+            alert('我的性别' + this.sex);
+        }
+
+        var p1 = new Person('blue', '男');
+        p1.showSex()
+        p1.showName();
+
+        var p2 = new Person('red', '女');
+        p2.showSex()
+        p2.showName();
+
+        alert(p1.showName == p2.showName);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

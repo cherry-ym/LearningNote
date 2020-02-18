@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj1 = {
+            a:10
+        }
+        var obj2 = {
+            b: 20,
+            c: 30
+        }
+        var obj3 = {
+            d:40,
+            f:['hello', 'world', true]
+        }
+
+        Object.assign(obj1, obj2, obj3);
+        //console.log(obj1);
+        /*
+        obj2.b = 100;
+        console.log(obj2);
+        console.log(obj1);
+        */
+
+        obj3.f.push('xxx');
+        console.log(obj3);
+        console.log(obj1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

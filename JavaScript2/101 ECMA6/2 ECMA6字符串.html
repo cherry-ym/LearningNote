@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        var str = 'helloworld';
+        alert(str);
+        */
+        /*
+        var str = `hello 
+        world`
+        alert(str);*/
+
+        function showSelf({age, name, sex = '男'}){
+            //alert('我叫' + name + "今年" + age + '是一位' + sex +'性');
+            alert(`我叫${name}，今年${age}岁，是一位${sex}性`);
+        }
+        showSelf({
+            age: 18,
+            name: '小狗'
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
