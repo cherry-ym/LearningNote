@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Dog({name, type, age}){
+                //this = new Object();
+                //添加属性
+                this.name = name;
+                this.type = type;
+                this.age = age;
+            }
+            /* 
+                通过构造函数的原型添加方法
+             */
+        Dog.prototype = {
+            run: function(){
+                alert(this.name + "会飞快的奔跑");
+            },
+            showSelf: function(){
+                alert(`这是一个${this.type}的，${this.age}岁的，叫${this.name}的小狗`);
+            }
+        }
+
+            //分类更加细分的构造函数。
+        function Teddy({name, type, age, color}){
+            //this = new Object();
+            //1.继承父级构造函数所有的属性
+            Dog.call(this, {
+                name: name,
+                type: type,
+                age: age
+            })
+            //添加自己的属性
+            this.color = color;
+            //return this;
+
+        }
+
+        //Teddy.prototype = Dog.prototype;
+        for(var funcName in Dog.prototype){
+            Teddy.prototype[funcName] = Dog.prototype[funcName];
+        }
+        
+        //在子一级构造函数重写showSelf方法
+        Teddy.prototype.showSelf = function(){
+            alert(`这是一个${this.type}的，${this.age}岁的，是${this.color}的，叫${this.name}的小狗`);
+        }
+
+        Teddy.prototype.showColor = function(){
+            alert(this.color);
+        }
+
+        var xiaohua = new Teddy({
+            name: "小花",
+            type: "泰迪",
+            age: 5,
+            color: "棕色"
+        })
+        xiaohua.showSelf();
+        xiaohua.showColor();
+
+        var xiaohei = new Dog({
+            name: "小黑",
+            type: "拉布拉多",
+            age: 5,
+        });
+        xiaohei.showSelf();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

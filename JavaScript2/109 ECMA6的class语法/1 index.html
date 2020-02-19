@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        function person(name, sex, age){
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+        } 
+
+        person.prototype.showSelf = function(){
+            alert(`我是一个叫${this.name}，今年${this.age}岁的${this.sex}孩`);
+        }
+        
+        function Worker(name, sex, age, job){
+            //1.继承父级所有属性
+            person.call(this, name, sex, age);
+            this.job = job;
+        }
+        //2.原型链继承父一级的方法
+        //<1>通过for...in遍历继承
+        for(var funcName in person.prototype){
+            Worker.prototype[funcName] = person.prototype[funcName];
+        }
+        //<2>Object.create()
+        //Worker.prototype = Object.create(person.prototype);
+        //<3>调用构造函数继承
+        //Worker.prototype = new person();
+
+        Worker.prototype.showJob = function(){
+            alert(`我的工作是${this.job}`);
+        }
+        var w1 = new Worker('小明', '男', 20, '程序员');
+        w1.showSelf();
+        w1.showJob();
+        */
+
+        //ECMA6的class语法
+        
+        class Person{
+            constructor(name, sex, age){
+                this.name = name;
+                this.sex = sex;
+                this.age = age;
+            }
+            showSelf(){
+                alert(`我是一个叫${this.name}，今年${this.age}岁的${this.sex}孩`);
+            }
+        }
+        var p1 = new Person("blue", '男', 18);
+        p1.showSelf();
+        
+        class Worker extends Person{
+            constructor(name, sex, age, job){
+                //1.继承父级所有属性
+                super(name, sex, age);
+                this.job = job;
+            }
+            showJob(){
+                alert(`我的工作是${this.job}`);
+            }
+        }
+        var w1 = new Worker('小明', '男', 20, '程序员');
+        w1.showSelf();
+        w1.showJob();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

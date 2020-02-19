@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        //1.找出所有的水仙花数，三位数，各位立方和等于该数本身。153 = 1 ^ 3 + 5 ^ 3 + 3 ^ 3
+        for(i = 100; i < 1000; i++){
+            var a = i % 10;
+            var b = parseInt(i / 10) % 10;
+            var c = parseInt(i / 100);
+            var sum = Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3);
+            if(i == sum){
+                document.write(i + "<br/>");
+            }
+        }
+    </script> -->
+    <script>
+        /*
+        2.求两个数的最大公约数
+        思路：先找出两个数中最小的那个数 ,最大公约数中最小是1，最大是两个数中较小的数*/
+        function greatestCommon(num1, num2){
+            var min = num1 > num2 ? num2 : num1;           
+            for(var i = min; i >= 1; i--){                
+                if(num1 % i == 0 && num2 % i == 0){
+                    //document.write('两者的最大公约数是：' + min);                    
+                    break;
+                }
+            }
+            return i;
+        }
+
+        document.write(greatestCommon(12,80)); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
