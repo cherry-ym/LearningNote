@@ -115,7 +115,7 @@ function doubleNum(n){
     }
 }
 
-//跨浏览器兼容
+//跨浏览器兼容获取当前css样式
 function getStyle(node, cssStyle){
     return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
 }

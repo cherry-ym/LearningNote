@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #div1{position: absolute; left: 1000px; top: 200px; background: plum; width: 100px; height: 100px;}
+    </style>
+    <script>
+        /*
+        刹车
+        速度和距离成正相关
+        var speed = 距离
+        var speed = (iTarget - iCur) / 8
+        计算机最小能识别一像素
+        */
+
+        window.onload = function(){
+            var oBtn = document.getElementById('btn1');
+            var oDiv = document.getElementById('div1');
+
+            oBtn.onclick = function(){
+                startMove(500);
+            }
+        }
+
+        var timer = null;
+        function startMove(iTarget){
+            var oDiv = document.getElementById('div1');
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = (iTarget - oDiv.offsetLeft) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(oDiv.offsetLeft == iTarget){
+                    clearInterval(timer);
+                }else{
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+    <div id="div1"></div>
+</body>
+</html>

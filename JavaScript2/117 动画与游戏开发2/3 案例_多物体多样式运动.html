@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 100px; height: 100px; background: plum; margin: 50px;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oDivs = document.getElementsByTagName('div');
+            oDivs[0].onclick = function(){
+                //宽变成 300
+                startMove(this, 'width', 300);
+            }
+
+            oDivs[1].onclick = function(){
+                //高变成 300
+                startMove(this, 'height', 300);
+            }
+
+            oDivs[2].onclick = function(){
+                //margin-left 变成 300
+                startMove(this, 'marginLeft', 300);
+            }
+
+            oDivs[3].onclick = function(){
+                //font-size 变成 50
+                startMove(this, 'fontSize', 50);
+            }
+        }
+
+        function startMove(node, attr, iTarget){
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                //计算速度
+                var iCur = parseInt(getStyle(node, attr));
+                var speed = (iTarget - iCur) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(iTarget == iCur){
+                    clearInterval(node.timer);
+                }else{
+                    node.style[attr] = iCur + speed + 'px';
+                }
+            }, 30)
+        }
+
+        //跨浏览器兼容获取当前css样式
+        function getStyle(node, cssStyle){
+        return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div>div文本</div>
+</body>
+</html>
