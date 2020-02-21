@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{position: absolute; width: 30px; height: 30px; background: brown;}
+    </style>
+    <script>
+        /*
+        画圆的步骤：（圆规画圆）
+        1、确定圆心
+        2、确定半径
+        3、旋转（顺时针）
+
+
+        1弧度 = Math.PI / 180;
+        */
+
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            var X = 500;
+            var Y = 300;
+
+            var r = 200;
+            var i = 0;      //代表转过的弧度
+            setInterval(function(){
+                i++;
+                var radian = i * Math.PI / 180;
+                var a = Math.sin(radian) * r;
+                var b = Math.cos(radian) * r;
+
+                oDiv.style.left = X + a + 'px';
+                oDiv.style.top = Y + b + 'px';
+
+                var node = document.createElement('div');
+                node.style.width = '5px';
+                node.style.height = '5px';
+                node.style.background = 'black';
+                node.style.position = 'absolute';
+                node.style.left = oDiv.offsetLeft + 'px';
+                node.style.top = oDiv.offsetTop + 'px';
+                document.body.appendChild(node);
+            }, 30)
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
