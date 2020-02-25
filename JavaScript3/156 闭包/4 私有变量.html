@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //A同学
+        var moduleA = (function(){
+            var count = 10;
+            function aaa(){
+                count += 2;
+                alert(count);
+            }
+            function bbb(){
+                count *= 10;
+                alert(count);
+            }
+            return{
+                funcA: aaa,
+                funcB: bbb
+            }
+        })();
+
+        //B同学
+        var moduleB = (function(){
+            var count = 100;
+            function aaa(){
+                count += 5;
+                alert(count);
+            }
+            function bbb(){
+                count *= 20;
+                alert(count);
+            }
+            return{
+                funcA: aaa,
+                funcB: bbb
+            }
+        })();
+
+        moduleA.funcA();
+        moduleA.funcB();
+        moduleB.funcA();
+        moduleB.funcB();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        function show(num1){
+            var num2 = 10;
+            alert(num1 + ',' + num2);
+        }
+
+        show(20);*/
+
+        function aaa(num1){
+            var num2 = 10;
+            function bbb(){
+                alert(num1 + ',' + num2);
+            }
+            return bbb;
+        }
+
+        var res = aaa(20);
+        //alert(res);         //输出bbb函数
+        res();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
