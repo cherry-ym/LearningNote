@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{width: 100px; height: 100px; background: brown;}
+    </style>
+    <script>
+        
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            /*
+            oDiv.onclick = function(){
+                //内存泄漏  IE浏览器
+                alert(oDiv.id);
+            }
+            */
+            /*
+            var id = oDiv.id;
+            oDiv.onclick = function(){
+                alert(id);          //只闭包id
+            }
+            oDiv = null;
+            */
+
+            //页面解构，IE支持  将常驻内存的都销毁
+            window.onunload = function(){
+                oDiv.onclick = null;
+                oDiv = null;            
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

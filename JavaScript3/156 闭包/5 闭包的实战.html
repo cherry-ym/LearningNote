@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oBtns = document.getElementsByTagName('button');
+            for(var i = 0; i < oBtns.length; i++){
+                /*
+                oBtns[i].onclick = function(){
+                    alert(i);       //无论点击哪个按钮都输出3
+                }
+                */
+
+                oBtns[i].onclick = (function(index){
+                    return function(){
+                        alert(index);
+                    }
+                })(i);
+
+                oBtns[i].onclick = btnClick(i);
+
+                function btnClick(index){
+                    return function(){
+                        alert(index);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+</body>
+</html>
