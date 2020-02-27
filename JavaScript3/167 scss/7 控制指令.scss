@@ -1,0 +1,11 @@
+$theme: dark;
+
+body{
+    @if $theme == dark{
+        background: black;
+    }@else if $theme == light{
+        background: white;
+    }@else{
+        background: gray;
+    }
+}

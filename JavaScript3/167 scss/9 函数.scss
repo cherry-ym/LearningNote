@@ -1,0 +1,16 @@
+$colors: (light:white,dark:black);
+
+@function color($key){
+    @if not map-has-key($colors, $key){
+        //警告不会中断sass监听
+        //@warn "在这个映射里没有一个叫#{$key}的键";
+
+        //错误会中断sass监听
+        @error "在这个映射里没有一个叫#{$key}的键";
+    }
+    @return map-get($colors, $key);
+}
+
+body{
+    background: color(light);
+}
